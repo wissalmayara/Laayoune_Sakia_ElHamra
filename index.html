@@ -1,0 +1,292 @@
+<html> 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="leaflet.css" />
+    <script src="leaflet.js"></script>
+    <script src="Laayoune_Sakia_ElHamra.geojson"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	</head>
+    <style>
+        .legend {
+                    line-height: 39px;
+                    color: #552;
+                }
+                .legend i {
+                    width: 39px;
+                    height: 39px;
+                    float: left;
+                    margin-right: 12px;
+                    opacity: 0.7;
+                }
+    </style>
+	
+<body>
+
+<div id="wrapper">
+        <center><div id="mapid" style="width: 1000px; height: 600px;"></div></center>
+        <div class="leaflet-top leaflet-right"><div class="info leaflet-control">
+		<script src="SliderControl.js"></script>
+            <script>
+             var sliderControl = null;
+				var mymap = L.map('mapid').setView([26.948202218486337, -12.558498450074355], 6);
+  				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(mymap);
+                
+                function getColor(e) {
+                    return  e >75 ? '#cc4c02'  :
+                            e >50 ? '#fe9929'  :
+                            e >5? '#fed98e' :
+                            '#FFEDA0'    ;
+
+                }
+
+				
+				function style7(feature) {
+                    return {
+                        weight: 2,
+                        opacity: 1,
+                        color: 'black',
+                        dashArray: '3',
+                        fillOpacity: 0.7,
+                        fillColor: getColor(feature.properties.Cas_23_Janvier_2022)
+                    };
+                }
+				function style6(feature) {
+                    return {
+                        weight: 2,
+                        opacity: 1,
+                        color: 'black',
+                        dashArray: '3',
+                        fillOpacity: 0.7,
+                        fillColor: getColor(feature.properties.Cas_22_Janvier_2022)
+                    };
+                }
+				function style5(feature) {
+                    return {
+                        weight: 2,
+                        opacity: 1,
+                        color: 'black',
+                        dashArray: '3',
+                        fillOpacity: 0.7,
+                        fillColor: getColor(feature.properties.Cas_21_Janvier_2022)
+                    };
+                }
+				function style4(feature) {
+                    return {
+                        weight: 2,
+                        opacity: 1,
+                        color: 'black',
+                        dashArray: '3',
+                        fillOpacity: 0.7,
+                        fillColor: getColor(feature.properties.Cas_20_Janvier_2022)
+                    };
+                }
+				function style3(feature) {
+                    return {
+                        weight: 2,
+                        opacity: 1,
+                        color: 'black',
+                        dashArray: '3',
+                        fillOpacity: 0.7,
+                        fillColor: getColor(feature.properties.Cas_19_Janvier_2022)
+                    };
+                }
+				function style2(feature) {
+                    return {
+                        weight: 2,
+                        opacity: 1,
+                        color: 'black',
+                        dashArray: '3',
+                        fillOpacity: 0.7,
+                        fillColor: getColor(feature.properties.Cas_18_Janvier_2022)
+                    };
+                }
+				function style1(feature) {
+                    return {
+                        weight: 2,
+                        opacity: 1,
+                        color: 'black',
+                        dashArray: '3',
+                        fillOpacity: 0.7,
+                        fillColor: getColor(feature.properties.Cas_17_Janvier_2022)
+                    };
+                }
+				 
+					
+                function highlightFeature(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 5,
+                        color: '#666',
+                        dashArray: '',
+                        fillOpacity: 0.7
+                    });                   
+                }
+
+                var geojson1;
+
+                function resetHighlight1(e) {
+                    geojson1.resetStyle(e.target);
+                    
+                }
+				var geojson2;
+
+                function resetHighlight2(e) {
+                    geojson2.resetStyle(e.target);
+                    
+                }
+				var geojson3;
+
+                function resetHighlight3(e) {
+                    geojson3.resetStyle(e.target);
+                
+				var geojson4;  
+                }
+				  function resetHighlight4(e) {
+                    geojson4.resetStyle4(e.target);
+                    
+                }
+				var geojson5;
+
+                function resetHighlight5(e) {
+                    geojson5.resetStyle(e.target);
+                    
+                }
+				var geojson6;
+
+                function resetHighlight6(e) {
+                    geojson6.resetStyle(e.target);
+					
+                var geojson7;
+                }  function resetHighlight7(e) {
+                    geojson7.resetStyle(e.target);
+                    
+                }
+				var geojson8;
+
+                
+	
+                function zoomToFeature(e) {
+                    mymap.fitBounds(e.target.getBounds());
+                }
+
+                function onEachFeature1(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight1,
+                        click: zoomToFeature
+                    });
+                }
+				 function onEachFeature2(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight2,
+                        click: zoomToFeature
+                    });
+                }
+				function onEachFeature3(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight3,
+                        click: zoomToFeature
+                    });
+                }
+				
+				function onEachFeature4(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight4,
+                        click: zoomToFeature
+                    });
+                }
+				 function onEachFeature5(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight5,
+                        click: zoomToFeature
+                    });
+                }
+				function onEachFeature6(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight6,
+                        click: zoomToFeature
+                    });
+                }                
+				function onEachFeature7(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature,
+                        mouseout: resetHighlight7,
+                        click: zoomToFeature
+                    });
+                }
+				
+				
+				
+                geojson_1 = L.geoJson(cas,{style: style1, onEachFeature: onEachFeature1, time: "Cas_17_Janvier_2022"
+                        }
+                );
+				geojson_2 = L.geoJson(cas,{style: style2, onEachFeature: onEachFeature2, time: "Cas_18_Janvier_2022"
+                        }
+                );
+				geojson_3 = L.geoJson(cas,{style: style3, onEachFeature: onEachFeature3, time: "Cas_19_Janvier_2022"
+                        }
+                );
+				geojson_4 = L.geoJson(cas,{style: style4, onEachFeature: onEachFeature4, time: "Cas_20_Janvier_2022"
+                        }
+                );
+				geojson_5 = L.geoJson(cas,{style: style5, onEachFeature: onEachFeature5, time: "Cas_21_Janvier_2022"
+                        }
+                );
+				geojson_6 = L.geoJson(cas,{style: style6, onEachFeature: onEachFeature6, time: "Cas_22_Janvier_2022"
+                        }
+                );
+				geojson_7 = L.geoJson(cas,{style: style7, onEachFeature: onEachFeature7, time: "Cas_23_Janvier_2022"
+                        }
+                );
+				
+				
+
+				//Ajouter le slider 		
+				
+				 layerGroup = L.layerGroup([geojson_1, geojson_2, geojson_3, geojson_4, geojson_5, geojson_6, geojson_7]);
+				var sliderControl = L.control.sliderControl({layer:layerGroup, follow: true});
+				mymap.addControl(sliderControl);
+				sliderControl.startSlider();
+
+                //Ajouter la légende 
+                var legend = L.control({position: 'bottomright'});
+
+                legend.onAdd = function (map) {
+
+                    var div = L.DomUtil.create('div', 'info legend'),
+                        grades = [0, 5, 50, 75,100],
+                        labels = [];
+
+                    for (var i = 0; i < grades.length; i++) {
+                        div.innerHTML +=
+                            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+                            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                    }
+
+                    return div;
+                };
+
+                legend.addTo(mymap);
+
+                
+
+				
+            </script>
+
+</body>
+</html>
